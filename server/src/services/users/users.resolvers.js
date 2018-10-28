@@ -1,10 +1,10 @@
 
-export default function (Users) {
+export default function (profiles) {
 
   const usersResolvers = {
     Users: {
       profile: (user) => {
-        return Users.find({ query: { _id: user.owner }}).then(result=> result[0] || result.data[0]);
+        return profiles.find({ query: { _id: user.owner }}).then(result=> result[0] || result.data[0]);
       }
     }
   };
