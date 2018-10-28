@@ -10,6 +10,7 @@ export default function () {
   const Users = app.service('users');
   const Profiles = app.service('profiles');
   const Apartments = app.service('apartments');
+  const Countries = app.service('countries');
   const Locations = app.service('locations');
 
   const rootResolvers = {
@@ -20,6 +21,7 @@ export default function () {
 
   addQueryResolvers(rootResolvers.Query, Users, 'user', 'users');
   addQueryResolvers(rootResolvers.Query, Apartments, 'apartment', 'apartments');
+  addQueryResolvers(rootResolvers.Query, Countries, 'country', 'countries');
   addQueryResolvers(rootResolvers.Query, Locations, 'location', 'locations');
 
   return merge(
